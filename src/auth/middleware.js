@@ -12,14 +12,15 @@ export default (capability) => {
 
       // BASIC Auth  ... Authorization:Basic ZnJlZDpzYW1wbGU=
       // BEARER Auth ... Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI
-
+      console.log('authType:     ', authType);
+      console.log('authString:     ', authString);
       switch(authType.toLowerCase()) {
-        case 'basic':
-          return _authBasic(authString);
-        case 'bearer':
-          return _authBearer(authString);
-        default:
-          return _authError();
+      case 'basic':
+        return _authBasic(authString);
+      case 'bearer':
+        return _authBearer(authString);
+      default:
+        return _authError();
       }
 
     } catch(e) {
@@ -53,7 +54,7 @@ export default (capability) => {
     }
 
     function _authError() {
-      next({status: 401, statusMessage: 'Unauthorized', message: 'Invalid User ID/Password'});
+      next({status: 401, statusMessage: 'Unauthorized', auth: `${req.headers.authorization}`, message: 'Invalid User ID/Password'});
     }
 
   };

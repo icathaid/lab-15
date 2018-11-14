@@ -1,33 +1,13 @@
-c'mon github do stuff
+[![Build Status](https://www.travis-ci.com/icathaid/lab-15.svg?branch=james)](https://www.travis-ci.com/icathaid/lab-15)
 
-![cf](http://i.imgur.com/7v5ASc8.png) Access Control (ACL)
-==========================================================
 
-## Submission Instructions
-  * Follow the instructions in the "Lab Instructions" documentation in the reference folder of the class repository
+##  Lab 15 - 
 
-### Overview
-Implement Role Based Authentication
+Add auth middleware to protect routes with appropriate user permissions
 
-#### Feature Tasks -- Server
-* Protect your API Routes with the proper permissions based on user capability
-  * `app.get('/schema')` should require the `superuser` capability
-  * `app.get(...)` should require the `read` capability
-  * `app.post(...)` should require the `create` capability
-  * `app.put(...)` should require the `update` capability
-  * `app.patch(...)` should require the `update` capability
-  * `app.delete(...)` should require the `delete` capability
+##  Notes
 
-* You will need to create, allocate, and identify user permissions in the model
-* You will need to restrict based on the given permission via middleware
 
-#### Feature Tasks -- RESTy
-* Add support for basic and bearer authentication
-* You will need to add fields for those on the form
-* You will need to pass those through, when present, in the superagent calls.
+I didn't get very far with this one but I need to rewatch the video so I'm going to submit the few changes that I made.  I'm still trying to get my head around how everything is wired together.
 
-#### Test
-* Add tests to the api routes, asserting restricted access to the routes as shown.
-
-#### Documentation
-Write a description of the project in your README.md, including detailed instructions for how to build your app. In your frontend README.md add a code block with your frontend .env vars, and in your backend README.md add a code block with your backend .env vars.
+I don't have anything deployed to Heroku yet.
